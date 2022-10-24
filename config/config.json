@@ -1,6 +1,8 @@
 {
   "development": {
-    "database": "auth_boilerplate",
+    "username": "postgres",
+    "password" : "sabika",
+    "database": "tea_education",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
