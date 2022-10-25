@@ -9,16 +9,22 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.STRING
-      },
       type: {
         type: Sequelize.STRING
       },
-      origins: {
+      source: {
+        type: Sequelize.STRING
+      },
+      varities: {
+        type: Sequelize.STRING
+      },
+      advantages: {
+        type: Sequelize.STRING
+      },
+      color: {
+        type: Sequelize.STRING
+      },
+      origin: {
         type: Sequelize.STRING
       },
       createdAt: {

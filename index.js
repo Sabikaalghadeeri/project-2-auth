@@ -1,10 +1,11 @@
+// require('dotenv').config()
 const express = require('express')
 const app = express()
 const ejsLayouts = require('express-ejs-layouts')
 const cookieParser = require('cookie-parser')
 const db = require('./models')
 const cryptoJS = require('crypto-js')
-const axios = require('axios')
+// const axios = require('axios')
 require('dotenv').config()
 
 // MIDDLEWARE
@@ -26,27 +27,37 @@ app.use(async (req, res, next)=>{
 
 // CONTROLLERS
 app.use('/users', require('./controllers/users'))
+app.use('/teas', require('./controllers/teas'))
+app.use('/comments', require('./controllers/comments'))
 
+// TEA API --------
+// app.get('/teas', (req,res)=>{
+//     try {
 
-app.get('/teas', (req,res)=>{
-    try {
-
-        // axios.get('https://tea-collection.herokuapp.com/types_of_tea')
-        axios.get('https://tea-collection-api.herokuapp.com/types_of_tea')
-        // .then(response => response.json())
-        .then(resp => {
-            console.log(resp.data);
-            res.send(resp.data)
-        });
-    } catch(err) {
-        res.send(err)
-    }
-})
+//         // axios.get('https://tea-collection.herokuapp.com/types_of_tea')
+//         axios.get('https://tea-collection-api.herokuapp.com/types_of_tea')
+//         // .then(response => response.json())
+//         .then(resp => {
+//             console.log(resp.data);
+//             res.send(resp.data)
+//         });
+//     } catch(err) {
+//         res.send(err)
+//     }
+// })
     
 // ROUTES
 app.get('/', (req, res)=>{
     res.render('home')
 })
+app.get('/comment', (req, res)=>{
+    res.render('comments')
+})
+
+app.get('/tea', (req, res)=>{
+    res.render('tea')
+})
+
 
 
 
