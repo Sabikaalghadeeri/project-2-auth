@@ -55,8 +55,8 @@ router.get('/logout', (req, res)=>{
 router.get('/profile', (req, res)=>{
     res.render('users/profile.ejs')
 })
-// router.get('/home', (req, res)=>{
-//     res.render('home.ejs')
-// })
+router.get('/home', (req, res)=>{
+    res.render('home.ejs')
+})
 
 module.exports = router

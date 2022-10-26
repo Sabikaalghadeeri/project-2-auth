@@ -1,4 +1,4 @@
-// require('dotenv').config()
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const ejsLayouts = require('express-ejs-layouts')
@@ -25,10 +25,21 @@ app.use(async (req, res, next)=>{
     next()
 })
 
+// app.get('/', (req, res) => {
+//     db.tea.findAll({
+//       include: [db.user]
+//     }).then((articles) => {
+//       res.render('main/index', { tea: articles })
+//     }).catch((error) => {
+//       console.log(error)
+//     //   res.status(400).render('main/404')
+//     })
+//   })
+
 // CONTROLLERS
 app.use('/users', require('./controllers/users'))
 app.use('/teas', require('./controllers/teas'))
-app.use('/comments', require('./controllers/comments'))
+// app.use('/comments', require('./controllers/comments'))
 
 // TEA API --------
 // app.get('/teas', (req,res)=>{
@@ -50,13 +61,13 @@ app.use('/comments', require('./controllers/comments'))
 app.get('/', (req, res)=>{
     res.render('home')
 })
-app.get('/comment', (req, res)=>{
-    res.render('comments')
-})
+// app.get('/comment', (req, res)=>{
+//     res.render('comments')
+// })
 
-app.get('/tea', (req, res)=>{
-    res.render('tea')
-})
+// app.get('/tea', (req, res)=>{
+//     res.render('tea')
+// })
 
 
 
