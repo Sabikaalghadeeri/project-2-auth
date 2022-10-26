@@ -36,6 +36,33 @@ router.get('/', (req, res) => {
     })
   })
 
+  router.post('/:id/comment', async (req, res)=> {
+   
+   let comment = await db.comment.create({
+        description: req.body.description,
+        teaId :req.params.id
+   })
+   
+   let user = await db.user.findByPk(res.locals.user.id)
+   
+   user.addComment(comment)
+
+   res.redirect(`/teas/${req.params.id}`)
+
+    // try{
+    //   db.comment.create({
+    //     description: req.body.description,
+    //     teaId :req.params.id
+    //   })
+    //   .then((comment, created) =>{
+
+
+
+    //   });
+    // }catch (err){
+    //   console.log(err);
+    // }
+  })
 
 
 module.exports = router

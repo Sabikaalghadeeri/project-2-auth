@@ -1,8 +1,43 @@
 <h1><%= tea.type %></h1>
-<ul>
+<ul> <hr>
     <li>Source: <%= tea.source %></li>
     <li>Varities: <%= tea.varities%></li>
     <li>Advantages: <%= tea.advantages%></li>
     <li>Color: <%= tea.color%></li>
     <li>Origin: <%= tea.origin%></li>
 </ul>
+
+  
+  <!-- <a href="/">&larr; Back Home</a> -->
+<!--   
+  <h2>Comment</h2>
+  <%//comment.forEach((comment)=>{ %>
+    <div class="well">
+      <p>
+        <%=// comment.description %>
+      </p>
+      <strong><%=// comment.userId %></strong>
+    </div>
+  <% //}) %>
+  
+  <hr /> -->
+
+<h3>Comment on this type</h3>
+
+<form action="/teas/<%=tea.id%>/comment" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea type="text" class="form-control" id="content" name="description" required></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-primary">
+</form>
+
+
+
+<hr />
