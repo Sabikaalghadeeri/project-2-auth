@@ -7,7 +7,7 @@ db.tea.bulkCreate(
             "id": 1,
             "type": "Black Tea",
             "source": "Made from the camellia sinesis Tea plant, fully or almost fully oxidized",
-            "varities": "Assam Tea, Earl Grey Tea, Darjeeling Tea,English Breakfast Tea",
+            "varities": "Assam Tea, Earl Grey Tea , Darjeeling Tea ,English Breakfast Tea",
             "advantages": "Protects lung damage caused by exposure to cigarette smoke, Expands airways making breathing easier for asthmatics, Improves brain function",
             "color": "Black",
             "origin": "China"

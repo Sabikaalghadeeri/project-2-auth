@@ -4,6 +4,8 @@ const app = express()
 const ejsLayouts = require('express-ejs-layouts')
 const cookieParser = require('cookie-parser')
 const db = require('./models')
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
 const cryptoJS = require('crypto-js')
 // const axios = require('axios')
 require('dotenv').config()
@@ -25,20 +27,13 @@ app.use(async (req, res, next)=>{
     next()
 })
 
-// app.get('/', (req, res) => {
-//     db.tea.findAll({
-//       include: [db.user]
-//     }).then((articles) => {
-//       res.render('main/index', { tea: articles })
-//     }).catch((error) => {
-//       console.log(error)
-//     //   res.status(400).render('main/404')
-//     })
-//   })
-
+app.get('/', (req, res) => {
+    res.render('welcome.ejs')
+})
 // CONTROLLERS
 app.use('/users', require('./controllers/users'))
 app.use('/teas', require('./controllers/teas'))
+app.use('/comments', require('./controllers/comments'))
 // app.use('/comments', require('./controllers/comments'))
 
 // TEA API --------

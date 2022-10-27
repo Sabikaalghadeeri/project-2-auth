@@ -31,13 +31,18 @@
   </div>
 
   <div class="form-group">
-    <label for="description">Description</label>
-    <textarea type="text" class="form-control" id="content" name="description" required></textarea>
+    <label for="comment">Comment</label>
+    <textarea type="text" class="form-control" id="content" name="comment" required></textarea>
   </div>
 
   <input type="submit" class="btn btn-primary">
 </form>
 
-
-
 <hr />
+
+<%tea.comments.forEach(c =>{ %>
+  <p>
+      <%=c.name%> : <%=c.comment%>
+  </p>
+
+<% }) %>

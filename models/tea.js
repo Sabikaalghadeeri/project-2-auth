@@ -12,9 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.tea.hasMany(models.comment)
+      models.tea.belongsTo(models.user)
     }
   }
   tea.init({
+    userId: DataTypes.INTEGER,
     type: DataTypes.STRING,
     source: DataTypes.STRING,
     varities: DataTypes.STRING,
