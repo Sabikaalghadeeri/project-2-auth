@@ -3,9 +3,15 @@
     <!-- the key defined in(teas.js).forEach((anyName)=>{}) -->
     <% tea.forEach((tea)=>{ %>
        <a href="/teas/<%=tea.id%>"> <li>
-            <%=tea.type %>
+            <%=tea.type %> 
         </li>
     </a>
+
+    <form method="POST" action="/teas/<%=tea.id%>/?_method=DELETE">
+    <button type="submit">Delete</button>
+    </form>
     
     <% }) %>
 </ul> 
+
+<a href="/teas/new">Add a new Tea Type</a>

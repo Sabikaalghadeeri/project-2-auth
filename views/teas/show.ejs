@@ -5,6 +5,9 @@
     <li>Advantages: <%= tea.advantages%></li>
     <li>Color: <%= tea.color%></li>
     <li>Origin: <%= tea.origin%></li>
+    <% if(tea.user){ %>
+      name : <%= tea.user.email %> 
+  <% }%>
 </ul>
 
   

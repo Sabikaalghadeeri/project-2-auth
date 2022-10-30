@@ -25,29 +25,36 @@ router.get('/', (req, res) => {
   })
   
   // ADDED a new type of tea by the user
-  router.post('/new', async (req,res)=>{
-    
-    console.log('req.body', req.body)
-    // Find the user
-    let user = res.locals.user
-    // create new tea
-    let newTea = await db.tea.findOrCreate({
-      where: {
+  router.post('/new', (req,res)=>{
+    // console.log('req.body', req.body)
+    db.tea.create({
         name: req.body.name,
-        // .. .. //
-      } 
+        type: req.body.type,
+        userId: res.locals.user.id,
+        source: req.body.source,
+        varities: req.body.varities,
+        advantages: req.body.advantages,
+        color: req.body.color,
+        origin: req.body.origin,
+        // include: [db.comment]
+    }).then(response=>{
+      res.redirect('/teas');
+
     })
-    // Associate tea to user
-    // await user.addTea(newTea)
-    // res.json(newTea)
-    // res.send('new tea has been added!')
-    res.redirect('/teas')
   })
+  router.delete('/:teaId', async (req,res) => {
+
+    //We need to delete tea type with id
+    await db.tea.destroy({
+        where: { id: req.params.teaId }
+    })
+    res.redirect('/teas')
+})
   
     router.get('/:teaId', (req, res) => {
       db.tea.findOne({
         where: { id: req.params.teaId },
-        include: [db.comment]
+        include: [db.comment, db.user]
       })
       .then((response) => {
         if (!response) throw Error()
