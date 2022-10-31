@@ -1,5 +1,5 @@
 <h1><%= tea.type %></h1>
-<ul> <hr>
+<ul>
     <li>Source: <%= tea.source %></li>
     <li>Varities: <%= tea.varities%></li>
     <li>Advantages: <%= tea.advantages%></li>
@@ -10,20 +10,6 @@
   <% }%>
 </ul>
 
-  
-  <!-- <a href="/">&larr; Back Home</a> -->
-<!--   
-  <h2>Comment</h2>
-  <%//comment.forEach((comment)=>{ %>
-    <div class="well">
-      <p>
-        <%=// comment.description %>
-      </p>
-      <strong><%=// comment.userId %></strong>
-    </div>
-  <% //}) %>
-  
-  <hr /> -->
 
 <h3>Comment on this type</h3>
 
@@ -41,7 +27,6 @@
   <input type="submit" class="btn btn-primary">
 </form>
 
-<hr />
 
 <%tea.comments.forEach(c =>{ %>
   <p>
@@ -49,3 +34,63 @@
   </p>
 
 <% }) %>
+
+<style>
+
+  h1 {
+    font-size: 30px;
+    font-family:verdana;
+    color: rgb(21, 160, 21);
+    padding: 10px;
+    display: inline-block;
+    text-align: justify;
+  }
+
+  h3 {
+    font-family:verdana;
+    font-size: 15px;
+    color: rgb(21, 160, 21);
+    padding: 10px;
+    text-align: justify;
+    font-style: italic;
+  }
+
+.form-group {
+  font-family:verdana;
+    font-size: 15px;
+    color: black;
+    /* padding: 10px; */
+    display: inline-block;
+    font-style: italic;
+  }
+
+  ul {
+    font-size: 20px;
+    color: solid black;
+    padding: 10px;
+    display: inline-block;
+    
+  }
+
+  .btn {
+    font-family:verdana;
+  background-color: #c6c6c6ac;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  margin: 4px 150px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.btn:hover {
+    background-color: #459a1b;
+}
+
+</style>
+
+
+

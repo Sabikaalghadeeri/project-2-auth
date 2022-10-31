@@ -2,16 +2,62 @@
 <ul>
     <!-- the key defined in(teas.js).forEach((anyName)=>{}) -->
     <% tea.forEach((tea)=>{ %>
-       <a href="/teas/<%=tea.id%>"> <li>
+       <a href="/teas/<%=tea.id%>" class="style2"> 
+        <li>
             <%=tea.type %> 
         </li>
     </a>
 
     <form method="POST" action="/teas/<%=tea.id%>/?_method=DELETE">
-    <button type="submit">Delete</button>
+    <button type="submit" class="btn">Delete</button>
     </form>
-    
+
     <% }) %>
 </ul> 
 
-<a href="/teas/new">Add a new Tea Type</a>
+<a href="/teas/new">Add a new Tea Type🌿</a>
+
+<style>
+
+.style2 {
+    font-size: 30px;
+    font-family:verdana;
+    color: rgb(21, 160, 21);
+    padding: 20px;
+    display: inline-block;
+    text-align: justify;
+    text-decoration: underline;
+}
+
+a {
+  font-size: 17px;
+  font-family:verdana;
+  color: rgb(107, 121, 116);
+  font-weight: bold;
+  text-decoration: none;
+}
+/* mouse over link */
+a:hover {
+  color: hotpink;
+  text-decoration: underline;
+}    
+
+.btn {
+  background-color: #c6c6c6ac;
+  font-family:verdana;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 150px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.btn:hover {
+    background-color: #459a1b;
+}
+
+</style>

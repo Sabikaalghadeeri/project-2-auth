@@ -11,12 +11,12 @@
     <nav>
         <ul>
             <% if(user){ %>
-                <li><a href="/users/profile">Profile</a></li>
-                <li><a href="/users/logout">Logout</a></li>
-                <li><a href="/users/Home">Home</a></li>
+                <li><a href="/users/profile" class="style1">Profile</a></li>
+                <li><a href="/users/logout" class="style1">Logout</a></li>
+                <li><a href="/users/Home" class="style1">Home</a></li>
             <% } else { %> 
-                <li><a href="/users/new">Sign Up</a></li>
-                <li><a href="/users/login">Login</a></li>
+                <li><a href="/users/new" class="style1">Sign Up</a></li>
+                <li><a href="/users/login" class="style1">Login</a></li>
             <% } %>
         </ul>
     </nav>
@@ -24,3 +24,39 @@
     <%- body %> 
 </body>
 </html>
+
+<style>
+    nav
+    { 
+        text-align: center;
+        font-family: Georgia;
+    }
+
+    li
+    {
+        display: inline;
+    }
+
+    body {
+        background-image: url('https://i.imgur.com/ECBwsNQ.jpg');
+        background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    }
+
+    .style1 {
+        font-family:verdana;
+  font-size: 17px;
+  color: rgb(107, 121, 116);
+  font-weight: bold;
+  text-decoration: none;
+}
+/* mouse over link */
+.style1:hover {
+  color: hotpink;
+  text-decoration: underline;
+}
+
+
+</style>
